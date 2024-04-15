@@ -1,0 +1,51 @@
+header {
+    background: dimgray;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+}
+
+.container {
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    top: 80px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    padding-bottom: 15px;
+}
+
+.main-pg-link {
+    color: rgb(67, 117, 244);
+}
+
+.main-pg-link:visited {
+    color: rgb(43, 93, 219);
+}
+
+.main-pg-link:hover {
+    color: rgb(225, 36, 36);
+}
+
+.main-pg-link:active {
+    color: rgb(49, 158, 114);
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background: dimgray;
+    color: white;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 75px;
+}
