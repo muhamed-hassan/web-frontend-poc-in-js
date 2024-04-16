@@ -1,0 +1,36 @@
+.searching-in-bank-accounts-form {
+    font-size: 20px;
+    position: relative;
+    left: 15px;
+    top: 25px;
+    margin-bottom: 150px;
+    height: 125px;
+    width: 670px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.searching-in-bank-accounts-form #nationalId {
+    width: 180px;
+}
+
+.searching-in-bank-accounts-form button {
+    padding: 10px 20px;
+    width: 275px;
+    cursor: pointer;
+    border: none;
+}
+
+.searching-in-bank-accounts-form #search-btn {
+    position: relative;
+    left: 15px;
+    background-color: rgb(72, 101, 208);
+    color: white;
+}
+
+.searching-in-bank-accounts-form #cancel-btn {
+    position: relative;
+    left: 100px;
+    background-color: rgb(200, 56, 51);
+    color: white;
+}

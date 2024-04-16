@@ -1,0 +1,32 @@
+.opening-bank-account-form {
+    font-size: 20px;
+    position: relative;
+    left: 15px;
+    top: 25px;
+    margin-bottom: 150px;
+    height: 180px;
+    width: 670px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.opening-bank-account-form button {
+    padding: 10px 20px;
+    width: 275px;
+    cursor: pointer;
+    border: none;
+}
+
+.opening-bank-account-form #save-btn {
+    position: relative;
+    left: 15px;
+    background-color: rgb(51, 180, 115);
+    color: white;
+}
+
+.opening-bank-account-form #cancel-btn {
+    position: relative;
+    left: 100px;
+    background-color: rgb(200, 56, 51);
+    color: white;
+}
