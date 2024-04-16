@@ -8,36 +8,10 @@ function launcher() {
     // start working with replaceble content here
     var root = document.getElementById("root");
 
+    var mainPage = new MainPage();
     var content = document.getElementById("content");
     content.setAttribute("class", "container");  
-    var mainPageContent = "<ul>" + 
-                                "<li>" + 
-                                    "<a class=\"main-pg-link\" id=\"openBankAccount\" href=\"#\" onclick=\"navigateTo(this)\">" + 
-                                        "Open bank account" + 
-                                    "</a>" + 
-                                "</li>" + 
-                                "<li>" + 
-                                    "<a class=\"main-pg-link\" id=\"viewBankAccount\" href=\"#\" onclick=\"navigateTo(this)\">" + 
-                                        "View bank account" + 
-                                    "</a>" + 
-                                "</li>" +
-                                "<li>" + 
-                                    "<a class=\"main-pg-link\" id=\"updateBankAccount\" href=\"#\" onclick=\"navigateTo(this)\">" + 
-                                        "Update bank account" + 
-                                    "</a>" + 
-                                "</li>" +
-                                "<li>" + 
-                                    "<a class=\"main-pg-link\" id=\"removeBankAccount\" href=\"#\" onclick=\"navigateTo(this)\">" + 
-                                        "Remove bank account" + 
-                                    "</a>" + 
-                                "</li>" +
-                                "<li>" + 
-                                    "<a class=\"main-pg-link\" id=\"viewBankAccountsInPages\" href=\"#\" onclick=\"navigateTo(this)\">" + 
-                                        "View bank accounts in pages" + 
-                                    "</a>" + 
-                                "</li>" +
-                            "</ul>";
-    content.innerHTML = mainPageContent;
+    content.innerHTML = mainPage.getHtml();
 
     var footer = document.getElementById("footer");
     root.insertBefore(content, footer);
@@ -70,10 +44,34 @@ function constructFooter() {
     root.appendChild(footer);
 }
 
+function getHtmlOfSearchInBankAccountsPage() {
+
+    return "<form class=\"searching-in-bank-accounts-form\">" +
+                "<table>" +
+                    "<tr>" +
+                        "<td> <label for=\"nationalId\">National ID:</label> </td>" +
+                        "<td> <input id=\"nationalId\" type=\"text\" /> </td>" +
+                        "<td colspan=\"3\" style=\"width: 200px;\"></td>" +
+                    "</tr>" +
+                    "<tr>" + 
+                        "<td colspan=\"5\" style=\"width: 75px; height: 50px\"></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td colspan=\"5\">" + 
+                            "<button id=\"search-btn\" type=\"submit\">Search</button>" +
+                            "<button id=\"cancel-btn\" type=\"reset\">Cancel</button>" +
+                        "</td>" +
+                    "</tr>" +
+                "</table>" +
+            "</form>" + 
+            "<a class=\"back-to-main\" id=\"backToMain\" href=\"#\" onclick=\"navigateTo(this)\">" + 
+                "Back to main" + 
+            "</a>";
+}
+
 function navigateTo(element) {
 
     var action = element.getAttribute("id");
-    console.log(action);
 
     var root = document.getElementById("root");
     var content = document.getElementById("content");
@@ -115,10 +113,6 @@ function navigateTo(element) {
                                         "<td colspan=\"5\">" + 
                                             "<button id=\"save-btn\" type=\"submit\">Save</button>" +
                                             "<button id=\"cancel-btn\" type=\"reset\">Cancel</button>" +
-                                        /*"</td>" +
-                                        "<td style=\"width: 75px;\"></td>" +
-                                        "<td colspan=\"2\">" + 
-                                            "<button id=\"cancel-btn\" type=\"reset\">Cancel</button>" +*/
                                         "</td>" +
                                     "</tr>" +
                                 "</table>" +
@@ -128,16 +122,10 @@ function navigateTo(element) {
                             "</a>";            
             break;
         case "viewBankAccount":
-            document.title = "A new title";
-            // draw the target pg
-            break;
         case "updateBankAccount":
-            document.title = "A new title";
-            // draw the target pg
-            break;
         case "removeBankAccount":
-            document.title = "A new title";
-            // draw the target pg
+            document.title = "Search in bank accounts";
+            pageContent = getHtmlOfSearchInBankAccountsPage();
             break;
         case "viewBankAccountsInPages":
             document.title = "A new title";
@@ -145,7 +133,8 @@ function navigateTo(element) {
             break;
         case "backToMain":
             document.title = "Home";
-            // draw the target pg
+            var mainPage = new MainPage();
+            pageContent = mainPage.getHtml();
             break;
         default:
             throw new Error("Unknown action !!!");
