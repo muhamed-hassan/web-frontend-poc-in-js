@@ -3,7 +3,7 @@ class OpeningBankAccountPage extends BasePage {
 
     getHtml() {
 
-        return "<form class=\"opening-bank-account-form\">" +
+        return "<form id=\"openingBankAccountForm\" class=\"opening-bank-account-form\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
                     "<table>" +
                         "<tr>" +
                             "<td> <label for=\"name\">Name:</label> </td>" +
@@ -38,6 +38,19 @@ class OpeningBankAccountPage extends BasePage {
                     "</table>" +
                 "</form>" + 
                 super.getBackToMainHtml();
+    }
+
+    processForm(submittedForm) {
+
+        var name = submittedForm["name"].value;
+        var dob = submittedForm["dob"].value;
+        var nationalId = submittedForm["nationalId"].value;
+        var cellPhone = submittedForm["cellPhone"].value;
+        var email = submittedForm["email"].value;
+        var mailingAddress = submittedForm["mailingAddress"].value;
+        var userInfoCreateModel = new UserInfoCreateModel(name, dob, nationalId, cellPhone, email, mailingAddress);
+
+        console.log(userInfoCreateModel);
     }
 
 }

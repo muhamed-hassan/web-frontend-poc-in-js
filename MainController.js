@@ -57,3 +57,31 @@ function navigateTo(element) {
     content.innerHTML = pageContent;
     root.insertBefore(content, footer);
 }
+
+// TODO: extract those functions in a FormHandler file following procedural style
+function submitForm(event) {
+
+    event.preventDefault();
+
+    console.log(event.srcElement);
+
+    var submittedForm = event.srcElement.id;
+    switch( submittedForm ) {
+        case "openingBankAccountForm":
+            var openingBankAccountPage = new OpeningBankAccountPage();
+            openingBankAccountPage.processForm(event.srcElement);
+            break;
+        default:
+            throw new Error("Unknown form !!!");
+    }
+}
+
+function resetForm(event) {
+
+    event.preventDefault();
+
+    var form = event.srcElement;
+    for (var cursor = 0; cursor < form.length; cursor++) {        
+        form.elements[cursor].value = "";
+    }
+}
