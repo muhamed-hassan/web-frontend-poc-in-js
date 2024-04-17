@@ -18,6 +18,7 @@ function launcher() {
     root.insertBefore(content, footer);
 }
 
+// Main menu navigation
 function navigateTo(element) {
 
     var action = element.getAttribute("id");
@@ -28,18 +29,32 @@ function navigateTo(element) {
     var pageContent;
 
     // start drawing the required pg with content segment
-    switch( action ) {
+    switch (action) {
         case "openBankAccount":
             document.title = "Open bank account";
             var openingBankAccountPage = new OpeningBankAccountPage();
             pageContent = openingBankAccountPage.getHtml();          
             break;
         case "viewBankAccount":
+            document.title = "Search in bank accounts";
+            var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
+            pageContent = searchingInBankAccountsPage.getHtml();
+            var targetPage = "bankAccountDetails";
+            localStorage.setItem("targetPage", targetPage);
+            break;
         case "updateBankAccount":
+            document.title = "Search in bank accounts";
+            var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
+            pageContent = searchingInBankAccountsPage.getHtml();
+            var targetPage = "updateBankAccount";
+            localStorage.setItem("targetPage", targetPage);
+            break;
         case "removeBankAccount":
             document.title = "Search in bank accounts";
             var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
             pageContent = searchingInBankAccountsPage.getHtml();
+            var targetPage = "removeBankAccount";
+            localStorage.setItem("targetPage", targetPage);
             break;
         case "viewBankAccountsInPages":
             document.title = "A new title";
@@ -56,32 +71,4 @@ function navigateTo(element) {
 
     content.innerHTML = pageContent;
     root.insertBefore(content, footer);
-}
-
-// TODO: extract those functions in a FormHandler file following procedural style
-function submitForm(event) {
-
-    event.preventDefault();
-
-    console.log(event.srcElement);
-
-    var submittedForm = event.srcElement.id;
-    switch( submittedForm ) {
-        case "openingBankAccountForm":
-            var openingBankAccountPage = new OpeningBankAccountPage();
-            openingBankAccountPage.processForm(event.srcElement);
-            break;
-        default:
-            throw new Error("Unknown form !!!");
-    }
-}
-
-function resetForm(event) {
-
-    event.preventDefault();
-
-    var form = event.srcElement;
-    for (var cursor = 0; cursor < form.length; cursor++) {        
-        form.elements[cursor].value = "";
-    }
 }
