@@ -7,14 +7,13 @@ function launcher() {
     templateConstructor.constructFooter();
 
     // start working with replaceble content here
-    var root = document.getElementById("root");
-    
     var content = document.getElementById("content");
     content.setAttribute("class", "container");  
     var mainPage = new MainPage();
     content.innerHTML = mainPage.getHtml();
 
     var footer = document.getElementById("footer");
+    var root = document.getElementById("root");
     root.insertBefore(content, footer);
 }
 
@@ -22,10 +21,6 @@ function launcher() {
 function navigateTo(element) {
 
     var action = element.getAttribute("id");
-
-    var root = document.getElementById("root");
-    var content = document.getElementById("content");
-    var footer = document.getElementById("footer");
     var pageContent;
 
     // start drawing the required pg with content segment
@@ -69,6 +64,9 @@ function navigateTo(element) {
             throw new Error("Unknown action !!!");
     }
 
+    var root = document.getElementById("root");
+    var content = document.getElementById("content");
+    var footer = document.getElementById("footer");
     content.innerHTML = pageContent;
     root.insertBefore(content, footer);
 }

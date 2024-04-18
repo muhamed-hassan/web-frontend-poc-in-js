@@ -1,7 +1,7 @@
 
 class UpdateBankAccountPage extends BasePage {
 
-    getHtml(userInfo) {
+    getHtml(userInfoReadModel) {
         
     }
 
