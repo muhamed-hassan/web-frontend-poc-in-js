@@ -22,6 +22,7 @@ class SearchingInBankAccountsFormHandler {
                 document.title = "Update bank account";
                 var updateBankAccountPage = new UpdateBankAccountPage();
                 pageContent = updateBankAccountPage.getHtml(userInfoReadModel);
+                localStorage.setItem("nationalId", nationalId);
                 break;
             case "removeBankAccount":
                 document.title = "Remove bank account";

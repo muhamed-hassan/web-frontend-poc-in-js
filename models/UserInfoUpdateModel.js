@@ -1,0 +1,4 @@
+
+class UserInfoUpdateModel extends UserInfoModel {
+
+}

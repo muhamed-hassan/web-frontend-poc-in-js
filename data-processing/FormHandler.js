@@ -4,7 +4,7 @@ function submitForm(event) {
     event.preventDefault();
 
     var submittedForm = event.srcElement.id;
-    switch( submittedForm ) {
+    switch (submittedForm) {
         case "openingBankAccountForm":
             var openingBankAccountFormHandler = new OpeningBankAccountFormHandler();
             openingBankAccountFormHandler.processForm(event.srcElement);
@@ -12,6 +12,10 @@ function submitForm(event) {
         case "searchingInBankAccountsForm":
             var searchingInBankAccountsFormHandler = new SearchingInBankAccountsFormHandler();
             searchingInBankAccountsFormHandler.processForm(event.srcElement);
+            break;
+        case "updatingBankAccountForm":
+            var updatingBankAccountFormHandler = new UpdatingBankAccountFormHandler();
+            updatingBankAccountFormHandler.processForm(event.srcElement);
             break;
         default:
             throw new Error("Unknown form !!!");
