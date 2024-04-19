@@ -3,8 +3,8 @@ class SearchingInBankAccountsPage extends BasePage {
 
     getHtml() {
 
-        return "<form id=\"searchingInBankAccountsForm\" class=\"searching-in-bank-accounts-form\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
-                    "<table>" +
+        return "<form id=\"searchingInBankAccountsForm\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
+                    "<table class=\"searching-in-bank-accounts-view\">" +
                         "<tr>" +
                             "<td> <label for=\"nationalId\">National ID:</label> </td>" +
                             "<td> <input id=\"nationalId\" type=\"text\" /> </td>" +

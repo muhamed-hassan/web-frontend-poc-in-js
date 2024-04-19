@@ -3,8 +3,8 @@ class OpeningBankAccountPage extends BasePage {
 
     getHtml() {
 
-        return "<form id=\"openingBankAccountForm\" class=\"opening-bank-account-form\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
-                    "<table>" +
+        return "<form id=\"openingBankAccountForm\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
+                    "<table class=\"opening-bank-account-view\">" +
                         "<tr>" +
                             "<td> <label for=\"name\">Name:</label> </td>" +
                             "<td> <input id=\"name\" type=\"text\" /> </td>" +

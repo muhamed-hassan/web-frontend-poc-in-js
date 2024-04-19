@@ -1,10 +1,10 @@
 
-class UpdateBankAccountPage extends BasePage {
+class UpdatingBankAccountPage extends BasePage {
 
     getHtml(userInfoReadModel) {
 
-        return "<form id=\"updatingBankAccountForm\" class=\"updating-bank-account-form\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
-                    "<table>" +
+        return "<form id=\"updatingBankAccountForm\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
+                    "<table class=\"updating-bank-account-view\">" +
                         "<tr>" +
                             "<td> <label for=\"cellPhone\">Cell phone:</label> </td>" +
                             "<td> <input id=\"cellPhone\" type=\"text\" value=\"" + userInfoReadModel.cellPhone + "\"/> </td>" +

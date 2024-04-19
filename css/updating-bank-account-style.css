@@ -1,4 +1,4 @@
-.updating-bank-account-form {
+.updating-bank-account-view {
     font-size: 20px;
     position: relative;
     left: 15px;
@@ -10,21 +10,21 @@
     border: 1px solid black;
 }
 
-.updating-bank-account-form button {
+.updating-bank-account-view button {
     padding: 10px 20px;
     width: 275px;
     cursor: pointer;
     border: none;
 }
 
-.updating-bank-account-form #update-btn {
+.updating-bank-account-view #update-btn {
     position: relative;
     left: 15px;
     background-color: rgb(51, 180, 115);
     color: white;
 }
 
-.updating-bank-account-form #cancel-btn {
+.updating-bank-account-view #cancel-btn {
     position: relative;
     left: 100px;
     background-color: rgb(200, 56, 51);

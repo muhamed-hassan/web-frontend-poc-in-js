@@ -1,4 +1,4 @@
-.searching-in-bank-accounts-form {
+.searching-in-bank-accounts-view {
     font-size: 20px;
     position: relative;
     left: 15px;
@@ -10,25 +10,25 @@
     border: 1px solid black;
 }
 
-.searching-in-bank-accounts-form #nationalId {
+.searching-in-bank-accounts-view #nationalId {
     width: 180px;
 }
 
-.searching-in-bank-accounts-form button {
+.searching-in-bank-accounts-view button {
     padding: 10px 20px;
     width: 275px;
     cursor: pointer;
     border: none;
 }
 
-.searching-in-bank-accounts-form #search-btn {
+.searching-in-bank-accounts-view #search-btn {
     position: relative;
     left: 15px;
     background-color: rgb(72, 101, 208);
     color: white;
 }
 
-.searching-in-bank-accounts-form #cancel-btn {
+.searching-in-bank-accounts-view #cancel-btn {
     position: relative;
     left: 100px;
     background-color: rgb(200, 56, 51);

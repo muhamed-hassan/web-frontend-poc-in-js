@@ -20,14 +20,16 @@ class SearchingInBankAccountsFormHandler {
                 break;
             case "updateBankAccount":
                 document.title = "Update bank account";
-                var updateBankAccountPage = new UpdateBankAccountPage();
+                var updateBankAccountPage = new UpdatingBankAccountPage();
                 pageContent = updateBankAccountPage.getHtml(userInfoReadModel);
                 localStorage.setItem("nationalId", nationalId);
                 break;
             case "removeBankAccount":
                 document.title = "Remove bank account";
-                var removeBankAccountPage = new RemoveBankAccountPage();
+                var removeBankAccountPage = new RemovingBankAccountPage();
                 pageContent = removeBankAccountPage.getHtml(userInfoReadModel);
+                localStorage.setItem("nationalId", nationalId);
+                localStorage.setItem("iban", userInfoReadModel.iban);
                 break;
             default:
                 throw new Error("Unknown targetPage !!!");

@@ -6,7 +6,7 @@
 
 ***
 
-A web-frontend POC in plain Javascript to see later the benefit of using React as a development framework like:
+A web-frontend POC in plain Javascript to see later the benefit of using [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) as a development framework like:
 
 * Less code
 
