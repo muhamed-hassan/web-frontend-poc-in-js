@@ -1,5 +1,5 @@
 
-class UserInfoReadModel extends UserInfoModel {
+class DetailedUserInfoReadModel extends UserInfoModel {
 
     constructor(name, dateOfBirth, iban, balance, currency, nationalId, cellPhone, email, mailingAddress) {
         super(nationalId, cellPhone, email, mailingAddress);

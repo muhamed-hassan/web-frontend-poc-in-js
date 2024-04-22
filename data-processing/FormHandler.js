@@ -31,28 +31,3 @@ function resetForm(event) {
         form.elements[cursor].value = "";
     }
 }
-
-function showConfirmationDialogue() {
-
-    var iban = localStorage.getItem("iban");
-    var confirmationMessage = "Are you sure that you want to delete the account with IBAN: " + iban + "?";
-    var confirmationDialogue = new ConfirmationDialogue(confirmationMessage);
-
-    var root = document.getElementById("root");    
-    var confirmationDialogueElement = document.createElement("div");    
-    confirmationDialogueElement.setAttribute("id", "confirmationDialogue");
-    confirmationDialogueElement.classList.add("modal");
-    confirmationDialogueElement.innerHTML = confirmationDialogue.getHtml();
-    confirmationDialogueElement.style.display = "block";    
-    root.appendChild(confirmationDialogueElement);
-}
-
-function confirmBankAccountRemoval() {
-
-    var confirmationDialogueElement = document.getElementById("confirmationDialogue");
-    confirmationDialogueElement.style.display = "none";
-    confirmationDialogueElement.remove();
-
-    var removingBankAccountFormHandler = new RemovingBankAccountFormHandler();
-    removingBankAccountFormHandler.processForm();
-}
