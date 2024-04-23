@@ -35,11 +35,7 @@ class SearchingInBankAccountsFormHandler {
                 throw new Error("Unknown targetPage !!!");
         }
 
-        var root = document.getElementById("root");
-        var content = document.getElementById("content");
-        var footer = document.getElementById("footer");
-        content.innerHTML = pageContent;
-        root.insertBefore(content, footer);
+        addContentToTemplate(pageContent);
     }
 
 }

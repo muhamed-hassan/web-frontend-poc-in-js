@@ -19,7 +19,7 @@
     font-size: 25px;
 }
 
-.removing-bank-account-view #delete-btn {
+.removing-bank-account-view button {
     padding: 10px 20px;
     width: 800px;
     cursor: pointer;

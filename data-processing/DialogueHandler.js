@@ -1,22 +1,4 @@
 
-function showModal(dialogueId, modalBody) {
-
-    var root = document.getElementById("root");    
-    var dialogueElement = document.createElement("div");    
-    dialogueElement.setAttribute("id", dialogueId);
-    dialogueElement.classList.add("modal");
-    dialogueElement.innerHTML = modalBody;
-    dialogueElement.style.display = "block";    
-    root.appendChild(dialogueElement);
-}
-
-function hideModal(dialogueId) {
-
-    var dialogueElement = document.getElementById(dialogueId);
-    dialogueElement.style.display = "none";
-    dialogueElement.remove();
-}
-
 function showConfirmationDialogue() {
 
     var iban = localStorage.getItem("iban");
@@ -61,4 +43,41 @@ function showBankAccountDetailsDialogue(nationalId) {
 function closeBankAccountDetailsDialogue() {
 
     hideModal("bankAccountDetailsDialogue");
+}
+
+function showBankAccountStateDialogue(message) {
+
+    var bankAccountStateDialogue = new BankAccountStateDialogue(message);
+
+    showModal("bankAccountStateDialogue", bankAccountStateDialogue.getHtml());
+}
+
+function closeBankAccountStateDialogue() {
+
+    hideModal("bankAccountStateDialogue");
+
+    document.title = "Home";
+    var mainPage = new MainPage();
+    var pageContent = mainPage.getHtml();
+    addContentToTemplate(pageContent);
+}
+
+/* ****************************************************************************************************** */
+
+function showModal(dialogueId, modalBody) {
+
+    var root = document.getElementById("root");    
+    var dialogueElement = document.createElement("div");    
+    dialogueElement.setAttribute("id", dialogueId);
+    dialogueElement.classList.add("modal");
+    dialogueElement.innerHTML = modalBody;
+    dialogueElement.style.display = "block";    
+    root.appendChild(dialogueElement);
+}
+
+function hideModal(dialogueId) {
+
+    var dialogueElement = document.getElementById(dialogueId);
+    dialogueElement.style.display = "none";
+    dialogueElement.remove();
 }

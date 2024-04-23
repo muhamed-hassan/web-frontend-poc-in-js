@@ -3,7 +3,7 @@ class UpdatingBankAccountPage extends BasePage {
 
     getHtml(userInfoReadModel) {
 
-        return "<form id=\"updatingBankAccountForm\" onsubmit=\"submitForm(event)\" onreset=\"resetForm(event)\">" +
+        return "<form id=\"updatingBankAccountForm\" onsubmit=\"submitForm(event)\">" +
                     "<table class=\"updating-bank-account-view\">" +
                         "<tr>" +
                             "<td> <label for=\"cellPhone\">Cell phone:</label> </td>" +
@@ -23,7 +23,6 @@ class UpdatingBankAccountPage extends BasePage {
                         "<tr>" +
                             "<td colspan=\"5\">" + 
                                 "<button id=\"update-btn\" type=\"submit\">Update</button>" +
-                                "<button id=\"cancel-btn\" type=\"reset\">Cancel</button>" +
                             "</td>" +
                         "</tr>" +
                     "</table>" +

@@ -11,14 +11,10 @@ function previous() {
     // fetch data after decrementing the currentIndex by 1
     currentIndex -= 1;
     var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-    var pageContent = viewingBankAccountsInPages.getHtml(getDummy50BankAccounts(currentIndex));
-    localStorage.setItem("currentIndex", currentIndex);
+    var pageContent = viewingBankAccountsInPages.getHtml(getDummy50BankAccounts(currentIndex));  
+    addContentToTemplate(pageContent);
 
-    var root = document.getElementById("root");
-    var content = document.getElementById("content");
-    var footer = document.getElementById("footer");
-    content.innerHTML = pageContent;
-    root.insertBefore(content, footer);
+    localStorage.setItem("currentIndex", currentIndex);
 }
 
 function next() {
@@ -33,13 +29,9 @@ function next() {
         showWarningDialogue("No data found");
     } else {
         var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-        var pageContent = viewingBankAccountsInPages.getHtml(fetchedData);
+        var pageContent = viewingBankAccountsInPages.getHtml(fetchedData);        
+        addContentToTemplate(pageContent);
+        
         localStorage.setItem("currentIndex", currentIndex);
-
-        var root = document.getElementById("root");
-        var content = document.getElementById("content");
-        var footer = document.getElementById("footer");
-        content.innerHTML = pageContent;
-        root.insertBefore(content, footer);
     }
 }

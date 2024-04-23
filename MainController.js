@@ -8,7 +8,8 @@ function launcher() {
 
     // start working with replaceble content here
     var content = document.getElementById("content");
-    content.setAttribute("class", "container");  
+    content.setAttribute("class", "container");
+
     var mainPage = new MainPage();
     content.innerHTML = mainPage.getHtml();
 
@@ -69,6 +70,11 @@ function navigateTo(element) {
         default:
             throw new Error("Unknown action !!!");
     }
+
+    addContentToTemplate(pageContent);
+}
+
+function addContentToTemplate(pageContent) {
 
     var root = document.getElementById("root");
     var content = document.getElementById("content");

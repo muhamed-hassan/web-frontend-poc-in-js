@@ -31,3 +31,11 @@ function resetForm(event) {
         form.elements[cursor].value = "";
     }
 }
+
+function dimForm(submittedForm) {
+
+    var formElements = submittedForm.elements;
+    for (var cursor = 0; cursor < formElements.length; cursor++) {
+        formElements[cursor].disabled = true;
+    }
+}
