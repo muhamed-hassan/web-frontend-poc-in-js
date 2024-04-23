@@ -26,6 +26,7 @@ function next() {
     var currentIndex = parseInt(localStorage.getItem("currentIndex"));
 
     currentIndex += 1;
+    // fetch data after incrementing the currentIndex by 1
     var fetchedData = getDummy50BankAccounts(currentIndex);
     if (fetchedData.length == 0) {
         currentIndex -= 1;

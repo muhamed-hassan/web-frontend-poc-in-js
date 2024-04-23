@@ -3,29 +3,25 @@ class TemplateConstructor {
 
     constructHeader() {
 
-        var root = document.getElementById("root");
-    
-        var header = document.createElement("header");
-        header.setAttribute("id", "header");
-        root.appendChild(header);
+        this.constructSegment("header", "header");
     }
     
     constructContent() {
-    
-        var root = document.getElementById("root");
-    
-        var content = document.createElement("div");
-        content.setAttribute("id", "content");
-        root.appendChild(content);
+
+        this.constructSegment("div", "content");
     }
     
     constructFooter() {
-    
+
+        this.constructSegment("footer", "footer");
+    }
+
+    constructSegment(elementType, segmentId) {
+
         var root = document.getElementById("root");
-    
-        var footer = document.createElement("footer");
-        footer.setAttribute("id", "footer");
-        root.appendChild(footer);
+        var element = document.createElement(elementType);
+        element.setAttribute("id", segmentId);
+        root.appendChild(element);
     }
 
 }

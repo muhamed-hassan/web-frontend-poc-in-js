@@ -1,16 +1,13 @@
 
-class ConfirmationDialogue {
+class ConfirmationDialogue extends BaseDialogue {
 
     constructor(message) {
-        this.message = message;
+        super(message, "confirmBankAccountRemoval");
     }
 
     getHtml() {
         
-        return "<div class=\"modal-content\">" +
-                    "<p>" + this.message + "</p>" +
-                    "<button id=\"ok-btn\" onclick=\"confirmBankAccountRemoval()\">Ok</button>" +
-                "</div>";
+        return super.getHtml();
     }
 
 }

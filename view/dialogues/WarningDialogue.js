@@ -1,16 +1,13 @@
 
-class WarningDialogue {
+class WarningDialogue extends BaseDialogue {
 
     constructor(message) {
-        this.message = message;
+        super(message, "closeWarningDialogue");
     }
 
     getHtml() {
         
-        return "<div class=\"modal-content\">" +
-                    "<p>" + this.message + "</p>" +
-                    "<button id=\"ok-btn\" onclick=\"closeWarningDialogue()\">Ok</button>" +
-                "</div>";
+        return super.getHtml();
     }
 
 }
