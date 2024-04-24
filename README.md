@@ -12,7 +12,7 @@ A web-frontend POC in plain Javascript to see later the benefit of using [React]
 
 * Increasing productivity AKA less time to do a feature
 
-* Moving to a fully OOP code and way of thinking
+* Moving to a fully OOP code as a way of thinking
 
 * Forced to use SPA in modeling the app
 
