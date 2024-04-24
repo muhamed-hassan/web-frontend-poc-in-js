@@ -15,3 +15,7 @@ A web-frontend POC in plain Javascript to see later the benefit of using [React]
 * Moving to a fully OOP code and way of thinking
 
 * Forced to use SPA in modeling the app
+
+***
+
+![668537](https://github.com/muhamed-hassan/web-frontend-poc-in-js/assets/17825804/70f130c4-7df0-445f-b54c-294e02472df1)
