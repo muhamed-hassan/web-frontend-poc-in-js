@@ -6,8 +6,8 @@ class SearchingInBankAccountsFormHandler {
         var nationalId = submittedForm["nationalId"].value;
 
         // load user's info using its nationalId
-        // name, dateOfBirth, iban, balance, currency, nationalId, cellPhone, email, mailingAddress
-        var userInfoReadModel = new DetailedUserInfoReadModel("inga robert", "2000-01-01", "GB29NWBK60165561440000", 5000.5, "GBP", "99996670589999", "07700900777", "inga.robert.2000@gmail.com", "55a High Street, Hedge End, SOUTHAMPTON, SO20 4NG");
+        var userResourceClient = new UserResourceClient();
+        var userInfoReadModel = userResourceClient.getDetailedBankAccount(nationalId);
 
         var pageContent;
         var targetPage = localStorage.getItem("targetPage");
