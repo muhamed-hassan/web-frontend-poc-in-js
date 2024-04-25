@@ -25,7 +25,6 @@ class UserResourceClient {
             requestHeaders.set("Accept", "application/json");
             var response = this.httpClient.doGet("http://localhost:8080/v1/users/" + nationalId, requestHeaders);        
             var parsedResponse = JSON.parse(response);
-
             userInfoReadModel = new DetailedUserInfoReadModel(
                 parsedResponse.name, parsedResponse.dateOfBirth, parsedResponse.iban, parsedResponse.balance, 
                 parsedResponse.currency, parsedResponse.nationalId, parsedResponse.cellPhone, 
@@ -36,6 +35,19 @@ class UserResourceClient {
             console.error(error + "\n\n");
         }
         return userInfoReadModel;
+    }
+
+    updateBankAccount(userInfoUpdateModel) {
+        try {       
+            var requestHeaders = new Map();
+            requestHeaders.set("Content-type", "application/json");
+            var requestPayload = JSON.stringify(userInfoUpdateModel);
+            this.httpClient.doPut("http://localhost:8080/v1/users", requestHeaders, requestPayload);
+        } catch (error) {
+            var errMsg = "Encountered an error during communicating with the backend. SOURCE::UserResourceClient.updateBankAccount()";
+            console.error(errMsg);
+            console.error(error + "\n\n");  
+        }
     }
 
 }
