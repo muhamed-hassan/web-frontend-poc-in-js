@@ -1,7 +1,7 @@
 
 class ApiConfigs {
 
-    getBaseUri() {
+    getDnsHost() {
         return "localhost:8080";
     }
 

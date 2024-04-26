@@ -7,11 +7,8 @@ class RemovingBankAccountFormHandler {
         localStorage.removeItem("nationalId");
         localStorage.removeItem("iban");
         
-        /*
-        TODO:
-        After action => calling the backend to remove a bank account
-        */
-        console.log(nationalId);
+        var userResourceClient = new UserResourceClient();
+        userResourceClient.removeBankAccount(nationalId);
 
         document.title = "Home";
         var mainPage = new MainPage();

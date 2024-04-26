@@ -11,7 +11,7 @@ class UserResourceClient {
             var requestHeaders = new Map();
             requestHeaders.set("Content-type", "application/json");
             var requestPayload = JSON.stringify(userInfoCreateModel);
-            this.httpClient.doPost(this.apiConfigs.getBaseUri() + this.apiConfigs.getUsersApiPath(), 
+            this.httpClient.doPost(this.apiConfigs.getDnsHost() + this.apiConfigs.getUsersApiPath(), 
                                     requestHeaders, 
                                     requestPayload);
         } catch (error) {
@@ -26,7 +26,7 @@ class UserResourceClient {
         try {       
             var requestHeaders = new Map();
             requestHeaders.set("Accept", "application/json");
-            var response = this.httpClient.doGet(this.apiConfigs.getBaseUri() + this.apiConfigs.getUsersApiPath() + "/" + nationalId, 
+            var response = this.httpClient.doGet(this.apiConfigs.getDnsHost() + this.apiConfigs.getUsersApiPath() + "/" + nationalId, 
                                                     requestHeaders);        
             var parsedResponse = JSON.parse(response);
             userInfoReadModel = new DetailedUserInfoReadModel(
@@ -46,13 +46,23 @@ class UserResourceClient {
             var requestHeaders = new Map();
             requestHeaders.set("Content-type", "application/json");
             var requestPayload = JSON.stringify(userInfoUpdateModel);
-            this.httpClient.doPut(this.apiConfigs.getBaseUri() + this.apiConfigs.getUsersApiPath(), 
+            this.httpClient.doPut(this.apiConfigs.getDnsHost() + this.apiConfigs.getUsersApiPath(), 
                                     requestHeaders, 
                                     requestPayload);
         } catch (error) {
             var errMsg = "Encountered an error during communicating with the backend. SOURCE::UserResourceClient.updateBankAccount()";
             console.error(errMsg);
             console.error(error + "\n\n");  
+        }
+    }
+
+    removeBankAccount(nationalId) {
+        try {       
+            this.httpClient.doDelete(this.apiConfigs.getDnsHost() + this.apiConfigs.getUsersApiPath() + "/" + nationalId);
+        } catch (error) {
+            var errMsg = "Encountered an error during communicating with the backend. SOURCE::UserResourceClient.removeBankAccount()";
+            console.error(errMsg);
+            console.error(error + "\n\n");    
         }
     }
 
