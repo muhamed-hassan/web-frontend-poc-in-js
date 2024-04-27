@@ -1,7 +1,7 @@
 
 class BriefUserInfoReadModel {
 
-    constructor(name, iban, balance, nationalId) {
+    constructor(name, nationalId, iban, balance) {
         this.name = name;
         this.nationalId = nationalId;
         this.iban = iban;

@@ -54,12 +54,13 @@ function navigateTo(element) {
             break;
         case "viewBankAccountsInPages":
             document.title = "Bank accounts";
-            // do the initial call to fetch data here      
-            //var bankAccounts = [{"name":"Elizabeth James","nationalId":"99996670580000","iban":"GB29NWBK60161357832162","balance":0.0},{"name":"Eleanor David","nationalId":"99996670580011","iban":"GB29NWBK60161355882231","balance":0.0},{"name":"Alice John","nationalId":"99996670580022","iban":"GB29NWBK60161354576769","balance":0.0},{"name":"Amelia Michael","nationalId":"99996670580033","iban":"GB29NWBK60161352478114","balance":0.0},{"name":"Emma Joseph","nationalId":"99996670580044","iban":"GB29NWBK60161367234796","balance":0.0},{"name":"Emily Daniel","nationalId":"99996670580055","iban":"GB29NWBK60161364342949","balance":0.0},{"name":"Grace Noah","nationalId":"99996670580066","iban":"GB29NWBK60161362475642","balance":0.0},{"name":"Olivia Henry","nationalId":"99996670580077","iban":"GB29NWBK60161359517696","balance":0.0},{"name":"Hannah Benjamin","nationalId":"99996670580088","iban":"GB29NWBK60161374472676","balance":0.0},{"name":"Sophia Thomas","nationalId":"99996670580099","iban":"GB29NWBK60161372952390","balance":0.0}];      
+            // do the initial call to fetch data here                  
             localStorage.removeItem("currentIndex");
             var currentIndex = 0;
+            var userResourceClient = new UserResourceClient();
+            var bankAccounts = userResourceClient.getBriefBankAccountsInPages(currentIndex);
             var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-            pageContent = viewingBankAccountsInPages.getHtml(getDummy50BankAccounts(currentIndex));
+            pageContent = viewingBankAccountsInPages.getHtml(bankAccounts);
             localStorage.setItem("currentIndex", currentIndex);  
             break;
         case "backToMain":

@@ -66,4 +66,26 @@ class UserResourceClient {
         }
     }
 
+    getBriefBankAccountsInPages(requestedPageIndex) {
+        var collectedElements;
+        try {       
+            var requestHeaders = new Map();
+            requestHeaders.set("Accept", "application/json");
+            var response = this.httpClient.doGet(this.apiConfigs.getDnsHost() + this.apiConfigs.getUsersApiPath() + "?pageIndex=" + requestedPageIndex, 
+                                                requestHeaders);        
+            var parsedResponse = JSON.parse(response);
+            collectedElements = new Array();
+            for (var cursor = 0; cursor < parsedResponse.length; cursor++) {
+                var briefUserInfoReadModel = new BriefUserInfoReadModel(parsedResponse[cursor].name, parsedResponse[cursor].nationalId, 
+                    parsedResponse[cursor].iban, parsedResponse[cursor].balance);
+                collectedElements.push(briefUserInfoReadModel);            
+            }
+        } catch (error) {
+            var errMsg = "Encountered an error during communicating with the backend. SOURCE::UserResourceClient.getBriefBankAccountsInPages()";
+            console.error(errMsg);
+            console.error(error + "\n\n");    
+        }
+        return collectedElements;
+    }
+
 }

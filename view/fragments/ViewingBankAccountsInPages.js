@@ -1,7 +1,6 @@
 
 class ViewingBankAccountsInPages extends BasePage {
 
-    // generate 10 records constantly even if there is no data enough to be displayed
     getHtml(bankAccounts) {
 
         var html = "<div class=\"viewing-bank-accounts-view\">" + 
