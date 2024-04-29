@@ -19,18 +19,16 @@
     width: 275px;
     cursor: pointer;
     border: none;
+    position: relative;
+    color: white;
 }
 
-.searching-in-bank-accounts-view #search-btn {
-    position: relative;
+.searching-in-bank-accounts-view #search-btn {    
     left: 15px;
-    background-color: rgb(72, 101, 208);
-    color: white;
+    background-color: rgb(72, 101, 208);    
 }
 
-.searching-in-bank-accounts-view #cancel-btn {
-    position: relative;
+.searching-in-bank-accounts-view #cancel-btn {    
     left: 100px;
-    background-color: rgb(200, 56, 51);
-    color: white;
+    background-color: rgb(200, 56, 51);    
 }

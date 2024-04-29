@@ -15,18 +15,16 @@
     width: 275px;
     cursor: pointer;
     border: none;
+    position: relative;
+    color: white;
 }
 
-.opening-bank-account-view #save-btn {
-    position: relative;
+.opening-bank-account-view #save-btn {    
     left: 15px;
-    background-color: rgb(51, 180, 115);
-    color: white;
+    background-color: rgb(51, 180, 115);    
 }
 
 .opening-bank-account-view #cancel-btn {
-    position: relative;
     left: 100px;
     background-color: rgb(200, 56, 51);
-    color: white;
 }

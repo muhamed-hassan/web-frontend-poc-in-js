@@ -47,18 +47,16 @@
     width: 275px;
     cursor: pointer;
     border: none;
+    position: relative;
+    color: white;
 }
 
-.viewing-bank-accounts-view #previous-btn {
-    position: relative;
+.viewing-bank-accounts-view #previous-btn {    
     left: 50px;
-    background-color: rgb(170, 15, 15);
-    color: white;
+    background-color: rgb(170, 15, 15);    
 }
 
 .viewing-bank-accounts-view #next-btn {
-    position: relative;
     left: 400px;
     background-color: rgb(26, 97, 229);
-    color: white;
 }
