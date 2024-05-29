@@ -12,8 +12,8 @@ function previous() {
     var userResourceClient = new UserResourceClient();
     var bankAccounts = userResourceClient.getBriefBankAccountsInPages(currentIndex);
 
-    var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-    var pageContent = viewingBankAccountsInPages.getHtml(bankAccounts);  
+    var viewingBankAccountsUsingPaginationPage = new ViewingBankAccountsUsingPaginationPage();
+    var pageContent = viewingBankAccountsUsingPaginationPage.getHtml(bankAccounts);  
     addContentToTemplate(pageContent);
 
     localStorage.setItem("currentIndex", currentIndex);
@@ -30,8 +30,8 @@ function next() {
         currentIndex -= 1;
         showWarningDialogue("No data found");
     } else {
-        var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-        var pageContent = viewingBankAccountsInPages.getHtml(fetchedData);        
+        var viewingBankAccountsUsingPaginationPage = new ViewingBankAccountsUsingPaginationPage();
+        var pageContent = viewingBankAccountsUsingPaginationPage.getHtml(fetchedData);        
         addContentToTemplate(pageContent);
         
         localStorage.setItem("currentIndex", currentIndex);

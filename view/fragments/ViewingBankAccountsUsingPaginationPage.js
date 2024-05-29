@@ -1,5 +1,5 @@
 
-class ViewingBankAccountsInPages extends BasePage {
+class ViewingBankAccountsUsingPaginationPage extends BasePage {
 
     getHtml(bankAccounts) {
 

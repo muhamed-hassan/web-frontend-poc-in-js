@@ -30,17 +30,18 @@ function closeWarningDialogue() {
 
 function showBankAccountDetailsDialogue(nationalId) {
 
-    // fetch the detailed-view of bankDetails using its nationalId
-    var bankAccountDetails = {"nationalId":"99996670580000","cellPhone":"07700900603","email":"inga.ulli.2023@gmail.com","mailingAddress":"3a High Street, Hedge End, SOUTHAMPTON, SO31 4NG","name":"Inga Ulli","dateOfBirth":"01-03-1990","iban":"GB29NWBK60161361444911","balance":0.0,"currency":"GBP"};    
-    var formattedBankAccountDetails = bankAccountDetails.name + " - " + bankAccountDetails.nationalId + " - " + bankAccountDetails.cellPhone + " - " + 
-                                        bankAccountDetails.email + " - " + bankAccountDetails.mailingAddress + " - " + bankAccountDetails.dateOfBirth + " - " + 
-                                        bankAccountDetails.iban + " - " + bankAccountDetails.balance + " - " + bankAccountDetails.currency;
+    var viewingBankAccountsUsingPaginationFormHandler = new ViewingBankAccountsUsingPaginationFormHandler();
+    viewingBankAccountsUsingPaginationFormHandler.processForm(nationalId);
+
+    var formattedBankAccountDetails = localStorage.getItem("formattedBankAccountDetails");
     var bankAccountDetailsDialogue = new BankAccountDetailsDialogue(formattedBankAccountDetails);
 
     showModal("bankAccountDetailsDialogue", bankAccountDetailsDialogue.getHtml());
 }
 
 function closeBankAccountDetailsDialogue() {
+
+    localStorage.removeItem("formattedBankAccountDetails");
 
     hideModal("bankAccountDetailsDialogue");
 }

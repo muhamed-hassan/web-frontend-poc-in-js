@@ -10,10 +10,7 @@ class RemovingBankAccountFormHandler {
         var userResourceClient = new UserResourceClient();
         userResourceClient.removeBankAccount(nationalId);
 
-        document.title = "Home";
-        var mainPage = new MainPage();
-        var pageContent = mainPage.getHtml();
-        addContentToTemplate(pageContent);
+       showBankAccountStateDialogue("The bank account has been removed successuflly");
     }
 
 }

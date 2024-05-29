@@ -59,8 +59,8 @@ function navigateTo(element) {
             var currentIndex = 0;
             var userResourceClient = new UserResourceClient();
             var bankAccounts = userResourceClient.getBriefBankAccountsInPages(currentIndex);
-            var viewingBankAccountsInPages = new ViewingBankAccountsInPages();
-            pageContent = viewingBankAccountsInPages.getHtml(bankAccounts);
+            var viewingBankAccountsUsingPaginationPage = new ViewingBankAccountsUsingPaginationPage();
+            pageContent = viewingBankAccountsUsingPaginationPage.getHtml(bankAccounts);
             localStorage.setItem("currentIndex", currentIndex);  
             break;
         case "backToMain":
