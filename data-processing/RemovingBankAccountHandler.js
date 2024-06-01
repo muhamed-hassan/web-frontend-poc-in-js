@@ -1,7 +1,7 @@
 
-class RemovingBankAccountFormHandler {
+class RemovingBankAccountHandler {
 
-    processForm() {
+    processRequest() {
 
         var nationalId = localStorage.getItem("nationalId");        
         localStorage.removeItem("nationalId");

@@ -12,8 +12,8 @@ function confirmBankAccountRemoval() {
 
     hideModal("confirmationDialogue");
 
-    var removingBankAccountFormHandler = new RemovingBankAccountFormHandler();
-    removingBankAccountFormHandler.processForm();
+    var removingBankAccountHandler = new RemovingBankAccountHandler();
+    removingBankAccountHandler.processRequest();
 }
 
 function showWarningDialogue(message) {
@@ -30,8 +30,8 @@ function closeWarningDialogue() {
 
 function showBankAccountDetailsDialogue(nationalId) {
 
-    var viewingBankAccountsUsingPaginationFormHandler = new ViewingBankAccountsUsingPaginationFormHandler();
-    viewingBankAccountsUsingPaginationFormHandler.processForm(nationalId);
+    var viewingBankAccountsUsingPaginationHandler = new ViewingBankAccountsUsingPaginationHandler();
+    viewingBankAccountsUsingPaginationHandler.processRequest(nationalId);
 
     var formattedBankAccountDetails = localStorage.getItem("formattedBankAccountDetails");
     var bankAccountDetailsDialogue = new BankAccountDetailsDialogue(formattedBankAccountDetails);

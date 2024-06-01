@@ -1,7 +1,7 @@
 
-class ViewingBankAccountsUsingPaginationFormHandler {
+class ViewingBankAccountsUsingPaginationHandler {
 
-    processForm(nationalId) {
+    processRequest(nationalId) {
 
         // load user's info using its nationalId
         var userResourceClient = new UserResourceClient();
