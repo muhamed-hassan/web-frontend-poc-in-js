@@ -36,32 +36,32 @@ function navigateTo(element) {
             var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
             pageContent = searchingInBankAccountsPage.getHtml();
             var targetPage = "bankAccountDetails";
-            localStorage.setItem("targetPage", targetPage);
+            sessionStorage.setItem("targetPage", targetPage);
             break;
         case "updateBankAccount":
             document.title = "Search in bank accounts";
             var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
             pageContent = searchingInBankAccountsPage.getHtml();
             var targetPage = "updateBankAccount";
-            localStorage.setItem("targetPage", targetPage);
+            sessionStorage.setItem("targetPage", targetPage);
             break;
         case "removeBankAccount":
             document.title = "Search in bank accounts";
             var searchingInBankAccountsPage = new SearchingInBankAccountsPage();
             pageContent = searchingInBankAccountsPage.getHtml();
             var targetPage = "removeBankAccount";
-            localStorage.setItem("targetPage", targetPage);
+            sessionStorage.setItem("targetPage", targetPage);
             break;
         case "viewBankAccountsInPages":
             document.title = "Bank accounts";
             // do the initial call to fetch data here                  
-            localStorage.removeItem("currentIndex");
+            sessionStorage.removeItem("currentIndex");
             var currentIndex = 0;
             var userResourceClient = new UserResourceClient();
             var bankAccounts = userResourceClient.getBriefBankAccountsInPages(currentIndex);
             var viewingBankAccountsUsingPaginationPage = new ViewingBankAccountsUsingPaginationPage();
             pageContent = viewingBankAccountsUsingPaginationPage.getHtml(bankAccounts);
-            localStorage.setItem("currentIndex", currentIndex);  
+            sessionStorage.setItem("currentIndex", currentIndex);  
             break;
         case "backToMain":
             document.title = "Home";

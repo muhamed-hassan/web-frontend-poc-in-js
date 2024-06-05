@@ -1,7 +1,7 @@
 
 function previous() {
 
-    var currentIndex = parseInt(localStorage.getItem("currentIndex"));    
+    var currentIndex = parseInt(sessionStorage.getItem("currentIndex"));    
     if (currentIndex == 0) {
         showWarningDialogue("Moving back on the first page of data is not allowed");
         return;
@@ -16,12 +16,12 @@ function previous() {
     var pageContent = viewingBankAccountsUsingPaginationPage.getHtml(bankAccounts);  
     addContentToTemplate(pageContent);
 
-    localStorage.setItem("currentIndex", currentIndex);
+    sessionStorage.setItem("currentIndex", currentIndex);
 }
 
 function next() {
     
-    var currentIndex = parseInt(localStorage.getItem("currentIndex"));
+    var currentIndex = parseInt(sessionStorage.getItem("currentIndex"));
     currentIndex += 1;
     var userResourceClient = new UserResourceClient();
 
@@ -34,6 +34,6 @@ function next() {
         var pageContent = viewingBankAccountsUsingPaginationPage.getHtml(fetchedData);        
         addContentToTemplate(pageContent);
         
-        localStorage.setItem("currentIndex", currentIndex);
+        sessionStorage.setItem("currentIndex", currentIndex);
     }
 }

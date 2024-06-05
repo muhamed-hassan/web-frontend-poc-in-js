@@ -10,8 +10,8 @@ class SearchingInBankAccountsFormHandler {
         var userInfoReadModel = userResourceClient.getDetailedBankAccount(nationalId);
 
         var pageContent;
-        var targetPage = localStorage.getItem("targetPage");
-        localStorage.removeItem("targetPage");
+        var targetPage = sessionStorage.getItem("targetPage");
+        sessionStorage.removeItem("targetPage");
         switch (targetPage) {
             case "bankAccountDetails":
                 document.title = "Bank account details";
@@ -22,14 +22,14 @@ class SearchingInBankAccountsFormHandler {
                 document.title = "Update bank account";
                 var updateBankAccountPage = new UpdatingBankAccountPage();
                 pageContent = updateBankAccountPage.getHtml(userInfoReadModel);
-                localStorage.setItem("nationalId", nationalId);
+                sessionStorage.setItem("nationalId", nationalId);
                 break;
             case "removeBankAccount":
                 document.title = "Remove bank account";
                 var removeBankAccountPage = new RemovingBankAccountPage();
                 pageContent = removeBankAccountPage.getHtml(userInfoReadModel);
-                localStorage.setItem("nationalId", nationalId);
-                localStorage.setItem("iban", userInfoReadModel.iban);
+                sessionStorage.setItem("nationalId", nationalId);
+                sessionStorage.setItem("iban", userInfoReadModel.iban);
                 break;
             default:
                 throw new Error("Unknown targetPage !!!");

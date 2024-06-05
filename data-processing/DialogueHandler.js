@@ -1,7 +1,7 @@
 
 function showConfirmationDialogue() {
 
-    var iban = localStorage.getItem("iban");
+    var iban = sessionStorage.getItem("iban");
     var confirmationMessage = "Are you sure that you want to delete the account with IBAN: " + iban + "?";
     var confirmationDialogue = new ConfirmationDialogue(confirmationMessage);
 
@@ -33,7 +33,7 @@ function showBankAccountDetailsDialogue(nationalId) {
     var viewingBankAccountsUsingPaginationHandler = new ViewingBankAccountsUsingPaginationHandler();
     viewingBankAccountsUsingPaginationHandler.processRequest(nationalId);
 
-    var formattedBankAccountDetails = localStorage.getItem("formattedBankAccountDetails");
+    var formattedBankAccountDetails = sessionStorage.getItem("formattedBankAccountDetails");
     var bankAccountDetailsDialogue = new BankAccountDetailsDialogue(formattedBankAccountDetails);
 
     showModal("bankAccountDetailsDialogue", bankAccountDetailsDialogue.getHtml());
@@ -41,7 +41,7 @@ function showBankAccountDetailsDialogue(nationalId) {
 
 function closeBankAccountDetailsDialogue() {
 
-    localStorage.removeItem("formattedBankAccountDetails");
+    sessionStorage.removeItem("formattedBankAccountDetails");
 
     hideModal("bankAccountDetailsDialogue");
 }

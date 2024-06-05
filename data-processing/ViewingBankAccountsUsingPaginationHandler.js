@@ -11,7 +11,7 @@ class ViewingBankAccountsUsingPaginationHandler {
                                             userInfoReadModel.email + " - " + userInfoReadModel.mailingAddress + " - " + userInfoReadModel.dateOfBirth + " - " + 
                                             userInfoReadModel.iban + " - " + userInfoReadModel.balance + " - " + userInfoReadModel.currency;
 
-        localStorage.setItem("formattedBankAccountDetails", formattedBankAccountDetails);
+        sessionStorage.setItem("formattedBankAccountDetails", formattedBankAccountDetails);
     }
 
 }

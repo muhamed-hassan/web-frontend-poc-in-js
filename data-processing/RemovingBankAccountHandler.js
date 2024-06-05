@@ -3,9 +3,9 @@ class RemovingBankAccountHandler {
 
     processRequest() {
 
-        var nationalId = localStorage.getItem("nationalId");        
-        localStorage.removeItem("nationalId");
-        localStorage.removeItem("iban");
+        var nationalId = sessionStorage.getItem("nationalId");        
+        sessionStorage.removeItem("nationalId");
+        sessionStorage.removeItem("iban");
         
         var userResourceClient = new UserResourceClient();
         userResourceClient.removeBankAccount(nationalId);
