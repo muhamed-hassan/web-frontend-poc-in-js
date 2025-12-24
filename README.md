@@ -1,4 +1,4 @@
-#### Please visit the wiki for more info https://github.com/muhamed-hassan/web-frontend-poc-in-js/wiki
+#### Please visit the [wiki](https://github.com/muhamed-hassan/web-frontend-poc-in-js/wiki) for more info
 
 ***
 
