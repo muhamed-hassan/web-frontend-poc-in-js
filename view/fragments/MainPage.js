@@ -3,7 +3,7 @@ class MainPage {
 
     getHtml() {
 
-        return "Welcome to CRUD operations example";
+        return "Welcome to CRUD operations example.";
     }
     
 }
