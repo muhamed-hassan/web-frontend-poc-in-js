@@ -7,14 +7,11 @@ class HttpClient {
         this.fillRequestHeaders(requestHeaders, xhttp);
         xhttp.send();
     
-        var response;
-        if (xhttp.status == 200) {
-            response = xhttp.responseText;
-        } else {
-            throw "ERROR with: " + xhttp.statusText;
+        if (xhttp.status != 200) {
+            throw new Error("ERROR with: " + this.constructHttpStatus(xhttp));
         }
     
-        return response;
+        return xhttp.responseText;
     }
     
     doPost(requestUrl, requestHeaders, requestPayload) {
@@ -24,8 +21,10 @@ class HttpClient {
         xhttp.send(requestPayload);
     
         if (xhttp.status != 201) {
-            throw "ERROR with: " + xhttp.statusText;
+            throw new Error("ERROR with: " + this.constructHttpStatus(xhttp));
         }
+
+        return this.constructHttpStatus(xhttp);
     }
     
     doDelete(requestUrl) {
@@ -34,8 +33,10 @@ class HttpClient {
         xhttp.send();
     
         if (xhttp.status != 204) {
-            throw "ERROR with: " + xhttp.statusText;
+            throw new Error("ERROR with: " + this.constructHttpStatus(xhttp));
         }
+
+        return this.constructHttpStatus(xhttp);
     }
     
     doPut(requestUrl, requestHeaders, requestPayload) {
@@ -45,8 +46,10 @@ class HttpClient {
         xhttp.send(requestPayload);
     
         if (xhttp.status != 204) {
-            throw "ERROR with: " + xhttp.statusText;
+            throw new Error("ERROR with: " + this.constructHttpStatus(xhttp));
         }
+
+        return this.constructHttpStatus(xhttp);
     }
     
     /* ****************************************************************************************************************** */
@@ -63,5 +66,8 @@ class HttpClient {
         return "http://";
     }
 
-}
+    constructHttpStatus(xhttp) {
+        return xhttp.status + " " + xhttp.statusText;
+    }
 
+}

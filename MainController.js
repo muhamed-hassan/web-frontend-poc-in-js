@@ -5,17 +5,6 @@ function launcher() {
     templateConstructor.constructHeader();
     templateConstructor.constructContent();
     templateConstructor.constructFooter();
-
-    // start working with replaceble content here
-    var content = document.getElementById("content");
-    content.setAttribute("class", "container");
-
-    var mainPage = new MainPage();
-    content.innerHTML = mainPage.getHtml();
-
-    var footer = document.getElementById("footer");
-    var root = document.getElementById("root");
-    root.insertBefore(content, footer);
 }
 
 // Main menu navigation
